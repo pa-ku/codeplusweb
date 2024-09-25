@@ -5,6 +5,7 @@ import icon from '../assets/icon.png'
 import codedark from '../assets/codeimg.png'
 import codelight from '../assets/codelight.png'
 
+
 export default function CodeEditorLanding() {
   const [darkMode, setDarkMode] = useState(false)
 
@@ -23,7 +24,12 @@ export default function CodeEditorLanding() {
 
   function handleDownload(){
 
-console.log('descargando');
+    const link = document.createElement('a')
+    link.href = '/assets/codiplus.7zip' // Ruta al archivo .7zip dentro de tu proyecto
+    link.download = 'codiplus.7zip' // Nombre con el que se descargará el archivo
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
 
 
   }
