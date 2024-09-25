@@ -22,7 +22,7 @@ export default function CodeEditorLanding() {
 
 
   function handleDownload() {
-    const CODE_URL = 'https://codeplusweb.vercel.app/codiplus.7z'
+    const CODE_URL = 'https://codeplusweb.vercel.app/codiplus-1.0.0-setup.exe'
     const fileName = CODE_URL.split("/").pop()
     const link = document.createElement('a')
     link.href = CODE_URL
