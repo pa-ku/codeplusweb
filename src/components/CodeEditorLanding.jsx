@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import icon from '../assets/icon.png'
 import codedark from '../assets/codeimg.png'
 import codelight from '../assets/codelight.png'
+import Link from './ui/Link'
 
 export default function CodeEditorLanding() {
   const [darkMode, setDarkMode] = useState(false)
@@ -78,9 +79,9 @@ export default function CodeEditorLanding() {
                   <Download />
                   Download for Free
                 </Button>
-                {/*   <Button className='border-2 text-pink-500 border-pink-500 hover:bg-pink-50 dark:text-pink-400 dark:border-pink-400 dark:hover:bg-pink-950'>
-                  Learn More
-                </Button> */}
+                <Link href={"https://codiplus.vercel.app/"}  className='border-2 text-gray-900 border-gray-900 hover:bg-gray-50 dark:text-pink-400 dark:border-pink-400 dark:hover:bg-pink-950'>
+                  Web Version
+                </Link> 
               </div>
             </div>
           </div>
