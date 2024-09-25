@@ -5,7 +5,6 @@ import icon from '../assets/icon.png'
 import codedark from '../assets/codeimg.png'
 import codelight from '../assets/codelight.png'
 
-
 export default function CodeEditorLanding() {
   const [darkMode, setDarkMode] = useState(false)
 
@@ -22,16 +21,15 @@ export default function CodeEditorLanding() {
   }
 
 
-  function handleDownload(){
-
+  function handleDownload() {
+    const CODE_URL = 'https://codeplusweb.vercel.app/codiplus.7z'
+    const fileName = CODE_URL.split("/").pop()
     const link = document.createElement('a')
-    link.href = '/assets/codiplus.7zip' // Ruta al archivo .7zip dentro de tu proyecto
-    link.download = 'codiplus.7zip' // Nombre con el que se descargará el archivo
+    link.href = CODE_URL
+    link.setAttribute('download', fileName)
     document.body.appendChild(link)
     link.click()
-    document.body.removeChild(link)
-
-
+    link.remove()
   }
 
   return (
@@ -47,9 +45,7 @@ export default function CodeEditorLanding() {
             CodiPlus
           </span>
         </a>
-        <nav className='ml-auto flex gap-4 sm:gap-6'>
-      
-        </nav>
+        <nav className='ml-auto flex gap-4 sm:gap-6'></nav>
         <Button
           className='ml-4'
           onClick={toggleDarkMode}
@@ -75,11 +71,14 @@ export default function CodeEditorLanding() {
                 </p>
               </div>
               <div className='space-x-4 flex'>
-                <Button onClick={handleDownload} className='gap-2 flex-row flex hap-3 items-center justify-center bg-gray-900 text-white hover:bg-gray-600 dark:bg-pink-600 dark:hover:bg-pink-700 '>
+                <Button
+                  onClick={handleDownload}
+                  className='gap-2 flex-row flex hap-3 items-center justify-center bg-gray-900 text-white hover:bg-gray-600 dark:bg-pink-600 dark:hover:bg-pink-700 '
+                >
                   <Download />
                   Download for Free
                 </Button>
-              {/*   <Button className='border-2 text-pink-500 border-pink-500 hover:bg-pink-50 dark:text-pink-400 dark:border-pink-400 dark:hover:bg-pink-950'>
+                {/*   <Button className='border-2 text-pink-500 border-pink-500 hover:bg-pink-50 dark:text-pink-400 dark:border-pink-400 dark:hover:bg-pink-950'>
                   Learn More
                 </Button> */}
               </div>
@@ -131,8 +130,11 @@ export default function CodeEditorLanding() {
               Code Preview
             </h2>
             <div className='flex items-center justify-center w-full'>
-
-     <img className='shadow-lg w-[70em] min-w-[30em]  object-contain rounded-xl border-2 border-gray-600' src={darkMode ? codedark : codelight} alt="imagen de muestra del codigo" />
+              <img
+                className='shadow-lg w-[70em] min-w-[30em]  object-contain rounded-xl border-2 border-gray-600'
+                src={darkMode ? codedark : codelight}
+                alt='imagen de muestra del codigo'
+              />
             </div>
           </div>
         </section>
