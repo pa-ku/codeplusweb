@@ -59,8 +59,8 @@ export default function CodeEditorLanding() {
         </Button>
       </header>
       <main className='flex-1'>
-        <section className='relative h-[30em] md:h-[40em] flex items-start justify-center w-full py-12 md:py-24 lg:py-32 xl:py-48'>
-          <div className=' w-full -bottom-24 flex justify-center absolute h-full items-end'>
+        <section className='relative h-[25em] md:h-[40em] flex items-start justify-center w-full py-12 md:py-24 lg:py-32 xl:py-48'>
+          <div className='px-2 w-full -bottom-24 flex justify-center absolute h-full items-end'>
             <video
               muted
               autoPlay
