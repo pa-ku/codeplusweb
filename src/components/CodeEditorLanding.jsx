@@ -7,7 +7,7 @@ import codelight from '../assets/codelight.png'
 import Link from './ui/Link'
 
 export default function CodeEditorLanding() {
-  const [darkMode, setDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState(true)
 
   useEffect(() => {
     if (darkMode) {
@@ -21,10 +21,9 @@ export default function CodeEditorLanding() {
     setDarkMode(!darkMode)
   }
 
-
   function handleDownload() {
     const CODE_URL = 'https://codeplusweb.vercel.app/codiplus-1.0.0-setup.exe'
-    const fileName = CODE_URL.split("/").pop()
+    const fileName = CODE_URL.split('/').pop()
     const link = document.createElement('a')
     link.href = CODE_URL
     link.setAttribute('download', fileName)
@@ -79,9 +78,12 @@ export default function CodeEditorLanding() {
                   <Download />
                   Download for Free
                 </Button>
-                <Link href={"https://codiplus.vercel.app/"}  className='border-2 text-gray-900 border-gray-900 hover:bg-gray-50 dark:text-pink-400 dark:border-pink-400 dark:hover:bg-pink-950'>
+                <Link
+                  href={'https://codiplus.vercel.app/'}
+                  className='border-2 text-gray-900 border-gray-900 hover:bg-gray-50 dark:text-pink-400 dark:border-pink-400 dark:hover:bg-pink-950'
+                >
                   Web Version
-                </Link> 
+                </Link>
               </div>
             </div>
           </div>
@@ -103,9 +105,24 @@ export default function CodeEditorLanding() {
                 </p>
               </div>
               <div className='flex flex-col items-center space-y-2 border-gray-200 dark:border-gray-700 p-4 rounded-lg'>
-                <Github className='size-12 mb-2 text-gray-900 dark:text-pink-400' />
+                
+                <svg
+                className='size-12 mb-2 text-gray-900  dark:stroke-pink-400'
+               
+                  width='44'
+                  height='44'
+                  viewBox='0 0 24 24'
+                  stroke-width='1.5'
+                  stroke='#000000'
+                  fill='none'
+                  stroke-linecap='round'
+                  stroke-linejoin='round'
+                >
+                  <path stroke='none' d='M0 0h24v24H0z' fill='none' />
+                  <path d='M11.667 6c-2.49 0 -4.044 1.222 -4.667 3.667c.933 -1.223 2.023 -1.68 3.267 -1.375c.71 .174 1.217 .68 1.778 1.24c.916 .912 2 1.968 4.288 1.968c2.49 0 4.044 -1.222 4.667 -3.667c-.933 1.223 -2.023 1.68 -3.267 1.375c-.71 -.174 -1.217 -.68 -1.778 -1.24c-.916 -.912 -1.975 -1.968 -4.288 -1.968zm-4 6.5c-2.49 0 -4.044 1.222 -4.667 3.667c.933 -1.223 2.023 -1.68 3.267 -1.375c.71 .174 1.217 .68 1.778 1.24c.916 .912 1.975 1.968 4.288 1.968c2.49 0 4.044 -1.222 4.667 -3.667c-.933 1.223 -2.023 1.68 -3.267 1.375c-.71 -.174 -1.217 -.68 -1.778 -1.24c-.916 -.912 -1.975 -1.968 -4.288 -1.968z' />
+                </svg>
                 <h3 className='text-xl font-bold text-gray-900 dark:text-white'>
-                  Git Integration
+                  Tailwind Integration
                 </h3>
                 <p className='text-sm text-gray-500 dark:text-gray-400 text-center'>
                   Seamless Git integration for easy version control and
@@ -132,7 +149,7 @@ export default function CodeEditorLanding() {
             </h2>
             <div className='flex items-center justify-center w-full'>
               <img
-                className='shadow-lg w-[70em] min-w-[30em]  object-contain rounded-xl border-2 border-gray-600'
+                className='shadow-lg md:w-[70em] md:min-w-[30em]  object-contain rounded-xl border-2 border-gray-600'
                 src={darkMode ? codedark : codelight}
                 alt='imagen de muestra del codigo'
               />
