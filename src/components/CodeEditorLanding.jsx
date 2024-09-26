@@ -1,10 +1,10 @@
 import Button from './ui/Button'
-import { Download, Github, Moon, Sun, Terminal, Zap } from 'lucide-react'
+import { Download, Moon, Sun, Terminal, Zap } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import icon from '../assets/icon.png'
-import codedark from '../assets/codeimg.png'
-import codelight from '../assets/codelight.png'
+
 import Link from './ui/Link'
+import codeplus from '../assets/codiplus.mp4'
 
 export default function CodeEditorLanding() {
   const [darkMode, setDarkMode] = useState(true)
@@ -33,8 +33,8 @@ export default function CodeEditorLanding() {
   }
 
   return (
-    <div className='flex flex-col min-h-screen bg-white dark:bg-gray-900 transition-colors duration-200'>
-      <header className='px-4 lg:px-6 h-14 flex items-center border-b border-gray-200 dark:border-gray-800'>
+    <div className=' flex flex-col min-h-screen bg-white dark:bg-gray-900 transition-colors duration-200'>
+      <header className=' px-4  lg:px-6 h-14 flex items-center border-b border-gray-200 dark:border-gray-800'>
         <a className='flex items-center justify-center' href='#'>
           <img
             className='size-8 object-contain'
@@ -59,9 +59,18 @@ export default function CodeEditorLanding() {
         </Button>
       </header>
       <main className='flex-1'>
-        <section className='flex items-center justify-center w-full py-12 md:py-24 lg:py-32 xl:py-48'>
-          <div className='container px-4 md:px-6'>
-            <div className='flex flex-col items-center space-y-4 text-center'>
+        <section className='relative h-[30em] md:h-[40em] flex items-start justify-center w-full py-12 md:py-24 lg:py-32 xl:py-48'>
+          <div className=' w-full -bottom-24 flex justify-center absolute h-full items-end'>
+            <video
+              muted
+              autoPlay
+              loop
+              className='w-[50em] bg-gray-900 rounded-2xl shadow-xl object-contain top-80 '
+              src={codeplus}
+            ></video>
+          </div>
+          <div className='container px-4 md:px-6 relative'>
+            <div className='flex flex-col md:-translate-y-28 items-center space-y-4 text-center'>
               <div className='space-y-2'>
                 <h1 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none text-gray-900 dark:text-white'>
                   Return to code
@@ -100,15 +109,13 @@ export default function CodeEditorLanding() {
                   Lightning Fast
                 </h3>
                 <p className='text-sm text-gray-500 dark:text-gray-400 text-center'>
-                  Optimized for speed and performance, CodeCraft loads instantly
+                  Optimized for speed and performance, CodiPlus loads instantly
                   and runs smoothly.
                 </p>
               </div>
               <div className='flex flex-col items-center space-y-2 border-gray-200 dark:border-gray-700 p-4 rounded-lg'>
-                
                 <svg
-                className='size-12 mb-2 text-gray-900  dark:stroke-pink-400'
-               
+                  className='size-12 mb-2 text-gray-900  dark:stroke-pink-400'
                   width='44'
                   height='44'
                   viewBox='0 0 24 24'
@@ -125,8 +132,7 @@ export default function CodeEditorLanding() {
                   Tailwind Integration
                 </h3>
                 <p className='text-sm text-gray-500 dark:text-gray-400 text-center'>
-                  Seamless Git integration for easy version control and
-                  collaboration.
+                  You have all the power of tailwind that you need
                 </p>
               </div>
               <div className='flex flex-col items-center space-y-2 border-gray-200 dark:border-gray-700 p-4 rounded-lg'>
@@ -139,20 +145,6 @@ export default function CodeEditorLanding() {
                   editor.
                 </p>
               </div>
-            </div>
-          </div>
-        </section>
-        <section className='flex items-center justify-center w-full py-12 md:py-24 lg:py-32'>
-          <div className='container px-4 md:px-6'>
-            <h2 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-8 text-gray-900 dark:text-white'>
-              Code Preview
-            </h2>
-            <div className='flex items-center justify-center w-full'>
-              <img
-                className='shadow-lg md:w-[70em] md:min-w-[30em]  object-contain rounded-xl border-2 border-gray-600'
-                src={darkMode ? codedark : codelight}
-                alt='imagen de muestra del codigo'
-              />
             </div>
           </div>
         </section>
